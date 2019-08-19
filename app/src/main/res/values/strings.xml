@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">FirebaseSocialMedia</string>
+    <string name="PleaseEnterYourEmailHere">Enter your email...</string>
+    <string name="PleaseEnterYourUsernameHere">Enter your username...</string>
+    <string name="PleaseEnterYourPasswordHere">Enter your password(Min 6 Characters)...</string>
+    <string name="btnSignUp">Sign Up</string>
+    <string name="btnSignIn">Sign In</string>
+    <string name="Welcome">Welcome !</string>
+    <string name="ViewPosts">View Posts</string>
+    <string name="Logout">Logout</string>
+</resources>
