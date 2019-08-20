@@ -4,7 +4,9 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -15,6 +17,7 @@ import com.google.firebase.FirebaseApp;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.auth.UserProfileChangeRequest;
 import com.google.firebase.database.FirebaseDatabase;
 
 import es.dmoral.toasty.Toasty;
@@ -71,6 +74,20 @@ public class MainActivity extends AppCompatActivity {
                             Toasty.success( MainActivity.this, "Signing Up Successful", Toasty.LENGTH_SHORT ).show();
                             FirebaseDatabase.getInstance().getReference().child( "my_users" ).child( task.getResult()
                             .getUser().getUid()).child( "username" ).setValue( edtUsername.getText().toString() );
+
+                            UserProfileChangeRequest profileUpdates = new UserProfileChangeRequest.Builder()
+                                    .setDisplayName(edtUsername.getText().toString()).build();
+
+                            FirebaseAuth.getInstance().getCurrentUser().updateProfile(profileUpdates)
+                                    .addOnCompleteListener(new OnCompleteListener<Void>() {
+                                        @Override
+                                        public void onComplete(@NonNull Task<Void> task) {
+                                            if (task.isSuccessful()) {
+                                                Toasty.success( MainActivity.this, "User profile updated", Toasty.LENGTH_SHORT ).show();
+                                            }
+                                        }
+                                    });
+
                             transitionToSocialMediaActivity();
                         }else {
                             Toasty.error( MainActivity.this, "Signing Up Failed", Toasty.LENGTH_SHORT ).show();

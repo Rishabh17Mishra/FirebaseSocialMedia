@@ -10,4 +10,6 @@
     <string name="Logout">Logout</string>
     <string name="btnCreatePost">Post</string>
     <string name="edtDes">Image Description</string>
+    <string name="receivedPosts">Received Posts</string>
+    <string name="textView">TextView</string>
 </resources>
