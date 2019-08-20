@@ -2,12 +2,16 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <item android:id="@+id/logoutItem"
-        android:title="@string/Logout"
-        app:showAsAction="always" />
-
     <item android:id="@+id/viewPostsItem"
         android:title="@string/ViewPosts"
-        app:showAsAction="always" />
+        app:showAsAction="always"
+        android:icon="@drawable/view_image"
+        android:orderInCategory="100"/>
+
+    <item android:id="@+id/logoutItem"
+        android:title="@string/Logout"
+        app:showAsAction="always"
+        android:icon="@drawable/logout"
+        android:orderInCategory="101"/>
 
 </menu>

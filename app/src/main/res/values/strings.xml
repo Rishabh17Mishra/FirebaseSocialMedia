@@ -8,4 +8,6 @@
     <string name="Welcome">Welcome !</string>
     <string name="ViewPosts">View Posts</string>
     <string name="Logout">Logout</string>
+    <string name="btnCreatePost">Post</string>
+    <string name="edtDes">Image Description</string>
 </resources>
